@@ -41,6 +41,10 @@ updateSearch = (search) => {
         if (!('shelf' in book)) {
           book.shelf = 'none'
         }
+         if (this.props.bookslist.some(({ id }) => id === book.id)) {
+          const currentBook = this.props.bookslist.filter(({id}) => id === book.id)
+          book.shelf = currentBook[0].shelf
+        }
         return book
       })
       
