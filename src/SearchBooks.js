@@ -10,7 +10,7 @@ state={
 }
 updateSearch = (search) => {
     this.setState(() => ({
-      search: search.trim()
+      search: search
     }))
     if(search!=='') {
         BooksAPI.search(search).then(bookslist => {
